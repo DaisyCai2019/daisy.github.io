@@ -1,37 +1,72 @@
-## Welcome to GitHub Pages
+<html>
 
-You can use the [editor on GitHub](https://github.com/DaisyCai2019/daisy.github.io/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+<body>
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+<h2>Data 608: Module5</h2>
 
-### Markdown
+<script type="text/javascript">
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+document.write('<p><i>1.Create a function to reverse any word that you type in. This can be typed into either an input box or an alert box, and then print the result in a box or on the webpage.</i></p>');
 
-```markdown
-Syntax highlighted code block
 
-# Header 1
-## Header 2
-### Header 3
+document.write('<br><p>Please enter your word here :')
+function reverse(word){
+var reverseWord = word.split("").reverse().join("");
+  return reverseWord 
+}
 
-- Bulleted
-- List
+function flip(){
+    var t = document.getElementById("target");
+    t.innerHTML = reverse(document.getElementById('word').value);
+}
 
-1. Numbered
-2. List
+</script>
+<p>
+<form>
+    <input id="word" type="text" size="4">
+    <input type="button" value="reverse" onClick="flip();">
+</form>
+</p>
+<div id="target"></div>
 
-**Bold** and _Italic_ and `Code` text
 
-[Link](url) and ![Image](src)
-```
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
 
-### Jekyll Themes
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/DaisyCai2019/daisy.github.io/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
 
-### Support or Contact
+<script type="text/javascript">
 
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+document.write('<p><i> 2.Create a function that takes an input number, and prints a table with the first 20 multiples of the number, in order 5x4</i></p>');
+
+document.write('<br><p>Please enter your number here :')
+
+function table(num) {
+    var i; 
+    var table; 
+    for (i=1; i < 21; i++) {
+      if((i-1)%4 == 0){table += "<tr><td>" + num*i + "</td>"}
+      else if(i%4 == 0) {table += "<td>" + num*i + "</td></tr>"} else (table += "<td>" + num*i + "</td>");
+    }
+table = "<table>"+table+"</table>"
+return(table);
+};
+
+
+
+function calc(){
+    var t2 = document.getElementById("target2");
+    t2.innerHTML = table(document.getElementById('num').value);
+}
+</script>
+
+<p>
+<form>
+    <input id="num" type="number" size="4">
+    <input type="button" value="multiply" onClick="calc();">
+</form>
+</p>
+
+<div id="target2"></div>
+
+</body>
+</html>
